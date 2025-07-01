@@ -1,0 +1,55 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+build/
+
+# .env files
+.env
+.env.*.local
+
+# Prisma
+/prisma/dev.db
+/prisma/dev.db-journal
+/prisma/migrations/*/README.md
+
+# Logs
+logs
+*.log
+*.log.*
+log/
+
+# IDEs y sistemas
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# OS
+*.swp
+*.swo
+
+# Coverage y testing
+coverage/
+jest-coverage/
+.nyc_output/
+
+# Next.js (si llegás a usarlo)
+.next/
+out/
+
+# React
+.cache/
+*.cache
+*.map
+
+# TypeScript
+*.tsbuildinfo
+
+# Optional: archivos generados por GitHub Desktop
+.github/
+
+# Optional: exportaciones temporales de VSCode, macOS, etc.
+*.code-workspace
