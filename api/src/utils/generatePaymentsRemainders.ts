@@ -1,7 +1,7 @@
 import { prisma } from "../prisma/client";
 
 // utils/generatePaymentReminders.ts
-export const generateExpiringPaymentNotifications = async () => {
+export const generatePaymentsReminders = async () => {
   const today = new Date();
 
   const soonExpiringUsers = await prisma.users.findMany({
@@ -41,3 +41,5 @@ export const generateExpiringPaymentNotifications = async () => {
     }
   }
 };
+
+export default generatePaymentsReminders;

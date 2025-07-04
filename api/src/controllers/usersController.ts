@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import * as userService from "../services/userService";
 import { prisma } from "../prisma/client";
+import generatePaymentsReminders from "../utils/generatePaymentsRemainders";
 
 export const getAllUsers = async (_req: Request, res: Response) => {
   try {
@@ -165,6 +166,7 @@ export const creditUserPayment = async (req: Request, res: Response) => {
 // src/controllers/usersController.ts
 
 export const getAllNotifications = async (_req: Request, res: Response) => {
+  await generatePaymentsReminders();
   console.log("🔔  Entered getAllNotifications");
   try {
     // Solo las NO leídas
