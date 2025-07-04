@@ -16,6 +16,7 @@ export default function UserDashboard({
     weight: data.weight || "",
     injury: data.injury || "",
   });
+
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
   const [showModal, setShowModal] = useState(false);
@@ -24,7 +25,6 @@ export default function UserDashboard({
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    console.log(data.id);
     setFormData({ ...formData, [name]: value });
   };
 
@@ -49,7 +49,7 @@ export default function UserDashboard({
       setError("Error al actualizar los datos");
     }
   };
-  console.log(data);
+
   return (
     <div className="p-20 bg-white w-full mx-auto">
       {showModal && (
@@ -57,9 +57,8 @@ export default function UserDashboard({
           userId={data.id}
           onClose={() => setShowModal(false)}
           onSuccess={() => {
-            // ✅ Ejecutamos la función que activa el refresco
             if (typeof setRefreshNotifications === "function") {
-              setRefreshNotifications((prev) => !prev); // cambio de estado = trigger
+              setRefreshNotifications((prev) => !prev);
             }
             window.location.reload();
           }}
